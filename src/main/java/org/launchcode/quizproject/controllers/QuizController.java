@@ -29,12 +29,12 @@ public class QuizController {
     }
 
     @RequestMapping(value="quiz", method= RequestMethod.POST)
-    public String processQuizForm(Model model, @ModelAttribute @Valid Quiz newQuiz, Errors errors){
+    public String processQuizForm(Model model,Errors errors, @ModelAttribute @Valid Quiz newQuiz){
         if (errors.hasErrors()) {
             model.addAttribute("title", "Take a Quiz!");
             return "quiz";
         }
-//        Quiz.add(newQuiz);
+        Quiz.add(newQuiz);
         return "results";
     }
 

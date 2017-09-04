@@ -2,7 +2,7 @@ package org.launchcode.quizproject.models;
 
 import java.util.ArrayList;
 
-public class Quiz{
+public class Quiz extends Question{
 //
 //    public enum QuestionType {
 //        CHECKBOX("checkbox"), SELECT("select"), RADIO("radio");
@@ -17,7 +17,7 @@ public class Quiz{
 
 //    private int id;
 //    private static int nextId = 1;
-    private ArrayList<Question> questionList = new ArrayList<>();
+    static ArrayList<Question> questionList = new ArrayList<>();
     private Question question = new Question();
 //    private String question;
 
@@ -32,6 +32,10 @@ public class Quiz{
     }
     public void setQuestionList(ArrayList<Question> questionList){
         questionList.add(question);
+    }
+    // add
+    public static void add(Question newQuestion) {
+        questionList.add(newQuestion);
     }
 
 
